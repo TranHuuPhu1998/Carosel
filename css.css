@@ -1,0 +1,182 @@
+/***************************** Header ***************************/
+/* Common */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Noto Sans Japanese", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+    font-size: 16px;
+    width: 100%;
+  }
+  
+  a {
+    display: inline-block;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    opacity: 0.7;
+    text-decoration: none;
+  }
+  
+  img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+  
+
+  /***************************** Banner ***************************/
+  .Banner {
+    display: flex;
+    margin-top: 8px;
+    justify-content: center;
+  }
+  
+  .Carousel {
+    width: 50%;
+  }
+  
+  .Carousel-nav {
+    border: 1px solid #ddd;
+    display: flex;
+    min-height: 50px;
+  }
+  
+  .Carousel-nav-item {
+    align-items: center;
+    border-right: 1px solid #ddd;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .Carousel-nav-item:hover {
+    background: #ddd;
+  }
+  
+  .Carousel-nav-item:last-child {
+    border-right: none;
+  }
+  
+  .Carousel-nav-item--active, .Carousel-nav-item--active:hover {
+    background: #e11b1e;
+  }
+  
+  .Carousel-nav-item--active .Carousel-nav-item__txt {
+    color: #fff;
+  }
+  
+  .Banner-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-left: 15px;
+  }
+  
+  .Banner-content__item {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    margin-bottom: 5px;
+    width: 100%;
+  }
+  
+  .Banner-content__item:last-child {
+    margin-bottom: 0;
+  }
+  
+  @media screen and (max-width: 1024px) {
+    .Banner {
+      flex-direction: column;
+    }
+    .Carousel {
+      flex: 0 0 auto;
+      width: 100%;
+    }
+    .Banner-content {
+      flex-direction: row;
+    }
+    /* .Carousel-nav {
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 25px;
+      border: none;
+      bottom: 0;
+      min-height: 30px;
+      margin: -40px auto 0;
+      position: relative;
+      width: 200px;
+    }
+    .Carousel-nav-item {
+      background: #828282;
+      border: none;
+      border-radius: 50%;
+      height: 15px;
+      width: 15px;
+      margin-right: 3px;
+    } */
+    .Carousel-nav-item--active, .Carousel-nav-item--active:hover {
+      background: red;
+    }
+  }
+  
+  /*********************** Carousel *********************/
+  .Carousel-content {
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 30px;
+  }
+  .Carousel-content__btn--left{
+      position: relative;
+      left: 0px;
+  }
+  .Carousel-content-list {
+    display: flex;
+    left: 0;
+    position: relative;
+  }
+  
+  .Carousel-content-item {
+    min-width: 100%;
+  }
+  
+  .Carousel-content__btn {
+    align-items: center;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5) , rgba(0, 0, 0, 0));
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    padding-right: 30px;
+    position: absolute;
+    top: 0;
+    width: 80px;
+  }
+  
+  .Carousel-content__btn::after {
+    border-color:red red transparent transparent;
+    border-style: solid;
+    border-width: 3px 3px 0 0;
+    content: "";
+    height: 20px;
+    transform: rotate(-135deg);
+    width: 20px;
+  }
+  
+  .Carousel-content__btn--right {
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.5) , rgba(0, 0, 0, 0));
+    padding-left: 30px;
+    right: 0;
+  }
+  
+  .Carousel-content__btn--right::after {
+    transform: rotate(45deg);
+  }
+  
